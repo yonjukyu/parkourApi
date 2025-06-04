@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: "parkourapi"
+  datasource:
+    # The jdbc url is: jdbc:h2:mem:schoolapidb
+    url: jdbc:h2:mem:parkourapidb;DB_CLOSE_DELAY=-1 # for In-memory database and jdbc:h2:file:[path/database-name] for disk-based database.
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+  h2:
+    console:
+      enabled: true # The console url is: /h2-console
+  ai:
+    mistralai:
+      api-key: "0QjhCpYh3POkxJ71KNdJM1asxYlvsmy2"
+      chat:
+        options:
+          model: "mistral-small-latest"
+jwt:
+  secret: "xAeySpnRn0w7t3H6p5nQ7xSebYeTg2QoFQcArW9c915xjMJ5EfLp7mSBd7U8tSv0Byhhy7q9XpaHUwu1hbbaeVAnkC2e00X48kFVIDRKGa95UDMdo11h9UQeta3jkCwCu"
+  expiration: 3600000 # 1 hour
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
